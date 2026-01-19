@@ -16,7 +16,7 @@ export class TaskForm {
   private submitHandler(event: Event) {
     event.preventDefault();
     const task = this.makeNewTask();
-    const item = new TaskItem("#task-item-template", task);
+    const item = new TaskItem(task);
     item.mount("#Todo");
     this.clearInputs();
   }

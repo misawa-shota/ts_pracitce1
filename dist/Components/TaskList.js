@@ -1,22 +1,15 @@
 import { status } from "../types/TaskStatusType.js";
-export class TaskList {
-    templateEl;
-    element;
+import { UiComponent } from "./UiComponent.js";
+export class TaskList extends UiComponent {
     taskStatus;
-    constructor(templateId, _taskStatus) {
-        this.templateEl = document.querySelector(templateId);
-        const clone = this.templateEl.content.cloneNode(true);
-        this.element = clone.firstElementChild;
-        this.taskStatus = _taskStatus;
+    constructor(taskStatus) {
+        super("#task-list-template");
+        this.taskStatus = taskStatus;
         this.setup();
     }
     setup() {
         this.element.querySelector("h2").textContent = `${this.taskStatus}`;
         this.element.querySelector("ul").id = `${this.taskStatus}`;
-    }
-    mount(selector) {
-        const targetEl = document.querySelector(selector);
-        targetEl.insertAdjacentElement("beforeend", this.element);
     }
 }
 //# sourceMappingURL=TaskList.js.map

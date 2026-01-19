@@ -1,10 +1,8 @@
 import { type TaskStatus } from "../types/TaskStatusType.js";
-export declare class TaskList {
-    templateEl: HTMLTemplateElement;
-    element: HTMLDivElement;
+import { UiComponent } from "./UiComponent.js";
+export declare class TaskList extends UiComponent<HTMLDivElement> {
     private taskStatus;
-    constructor(templateId: string, _taskStatus: TaskStatus);
+    constructor(taskStatus: TaskStatus);
     setup(): void;
-    mount(selector: string): void;
 }
 //# sourceMappingURL=TaskList.d.ts.map

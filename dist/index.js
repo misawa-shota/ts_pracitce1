@@ -3,7 +3,7 @@ import { TaskList } from "./Components/TaskList.js";
 import { status } from "./types/TaskStatusType.js";
 new TaskForm();
 status.forEach((taskStatus) => {
-    const list = new TaskList("#task-list-template", taskStatus);
+    const list = new TaskList(taskStatus);
     list.mount("#container");
 });
 //# sourceMappingURL=index.js.map
