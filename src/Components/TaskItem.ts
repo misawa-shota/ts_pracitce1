@@ -1,28 +1,20 @@
 import type { Task } from "../types/TaskType.js";
 import { status, type TaskStatus } from "../types/TaskStatusType.js";
+import { UiComponent } from "./UiComponent.js";
 
-export class TaskItem {
-  templateEl: HTMLTemplateElement;
-  element: HTMLLIElement;
+export class TaskItem extends UiComponent<HTMLLIElement> {
   task: Task;
 
-  constructor(templateId: string, _task: Task) {
-    this.templateEl = document.querySelector(templateId)!;
-    const clone = this.templateEl.content.cloneNode(true) as DocumentFragment;
-    this.element = clone.firstElementChild as HTMLLIElement;
+  constructor(_task: Task) {
+    super("#task-item-template")
     this.task = _task;
     this.setup();
     this.bindEvent();
   }
 
-  setup() {
+  override setup() {
     this.element.querySelector("h2")!.textContent = `${this.task.title}`;
     this.element.querySelector("p")!.textContent = `${this.task.description}`;
-  }
-
-  mount(selector: string) {
-    const targetEl = document.querySelector(selector)!;
-    targetEl.insertAdjacentElement("beforeend", this.element);
   }
 
   clickHandler() {

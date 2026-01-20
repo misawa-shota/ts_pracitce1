@@ -1,11 +1,9 @@
 import type { Task } from "../types/TaskType.js";
-export declare class TaskItem {
-    templateEl: HTMLTemplateElement;
-    element: HTMLLIElement;
+import { UiComponent } from "./UiComponent.js";
+export declare class TaskItem extends UiComponent<HTMLLIElement> {
     task: Task;
-    constructor(templateId: string, _task: Task);
+    constructor(_task: Task);
     setup(): void;
-    mount(selector: string): void;
     clickHandler(): void;
     bindEvent(): void;
 }
