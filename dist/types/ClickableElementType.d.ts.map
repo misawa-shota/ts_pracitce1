@@ -1,1 +1,1 @@
-{"version":3,"file":"ClickableElementType.d.ts","sourceRoot":"","sources":["../../src/types/ClickableElementType.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,gBAAgB,GAAG;IAC7B,OAAO,EAAE,WAAW,CAAC;IACrB,YAAY,CAAC,KAAK,EAAE,UAAU,GAAG,IAAI,CAAC;IACtC,UAAU,IAAI,IAAI,CAAC;CACpB,CAAA"}
+{"version":3,"file":"ClickableElementType.d.ts","sourceRoot":"","sources":["../../src/types/ClickableElementType.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,gBAAgB,GAAG;IAC7B,OAAO,EAAE,WAAW,CAAC;IACrB,YAAY,CAAC,KAAK,EAAE,UAAU,GAAG,IAAI,CAAC;IACtC,SAAS,IAAI,IAAI,CAAC;CACnB,CAAA"}

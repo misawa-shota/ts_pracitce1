@@ -1,8 +1,9 @@
 import type { Task } from "../types/TaskType.js";
 import { status, type TaskStatus } from "../types/TaskStatusType.js";
 import { UiComponent } from "./UiComponent.js";
+import type { ClickableElement } from "../types/ClickableElementType.js";
 
-export class TaskItem extends UiComponent<HTMLLIElement> {
+export class TaskItem extends UiComponent<HTMLLIElement> implements ClickableElement {
   task: Task;
 
   constructor(_task: Task) {
@@ -17,7 +18,7 @@ export class TaskItem extends UiComponent<HTMLLIElement> {
     this.element.querySelector("p")!.textContent = `${this.task.description}`;
   }
 
-  clickHandler() {
+  clickHandler(): void {
     if(!this.element.parentElement) return;
 
     const currentListId = this.element.parentElement.id as TaskStatus;
@@ -38,7 +39,7 @@ export class TaskItem extends UiComponent<HTMLLIElement> {
     this.element.remove();
   }
 
-  bindEvent() {
+  bindEvent(): void {
     this.element.addEventListener("click", this.clickHandler.bind(this));
   }
 }
